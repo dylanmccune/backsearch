@@ -1,0 +1,44 @@
+{
+    "manifest_version": 2,
+    "name": "BackSearch",
+    "version": "1.2",
+    "description": "Jump straight back to your last search results with a single keypress or click. No more mashing the back button.",
+    "permissions": [
+        "tabs",
+        "webNavigation",
+        "storage",
+        "contextMenus"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "commands": {
+        "go-to-search": {
+            "suggested_key": {
+                "default": "Alt+Left"
+            },
+            "description": "Go to the last recorded search page"
+        }
+    },
+    "browser_action": {
+        "default_title": "BackSearch",
+        "default_icon": {
+            "16": "icon-16x.png",
+            "32": "icon-32x.png",
+            "48": "icon-48x.png",
+            "96": "icon-96x.png"
+        }
+    },
+    "icons": {
+        "16": "icon-16x.png",
+        "32": "icon-32x.png",
+        "48": "icon-48x.png",
+        "96": "icon-96x.png"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    }
+}

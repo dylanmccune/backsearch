@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BackSearch Options</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      background: #f6f8fa;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1.5px 4px rgba(0,0,0,0.03);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #222;
+      letter-spacing: 0.01em;
+    }
+
+    .option-group {
+      margin: 2rem 0;
+      padding: 1.5rem 1.25rem;
+      background: #f3f6fa;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      transition: box-shadow 0.2s;
+    }
+
+    .option-group:focus-within {
+      box-shadow: 0 2px 8px rgba(0, 120, 212, 0.08);
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      accent-color: #0078d4;
+      margin-right: 0.5em;
+      transform: scale(1.2);
+      vertical-align: middle;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 0.5rem;
+      padding: 0.75rem;
+      font-family: monospace;
+      font-size: 1rem;
+      border: 1px solid #cfd8dc;
+      border-radius: 6px;
+      background: #fff;
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      border-color: #0078d4;
+      outline: none;
+      background: #f0f8ff;
+    }
+
+    .help-text {
+      color: #5a5a5a;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
+      .option-group {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BackSearch Options</h1>
+    
+    <div class="option-group">
+      <label for="iconClickEnabled">
+        <input type="checkbox" id="iconClickEnabled">
+        Enable toolbar icon click navigation
+      </label>
+      <p class="help-text">When enabled, clicking the toolbar icon will navigate back to the previous search page.</p>
+    </div>
+
+    <div class="option-group">
+      <label for="customSearchPatterns">Custom Search Engine Patterns</label>
+      <textarea id="customSearchPatterns" 
+                placeholder="Enter one search engine pattern per line&#10;Example: mycustomsearch.com/search"></textarea>
+      <p class="help-text">Add custom search engine URLs to track (one per line).</p>
+    </div>
+
+    <div class="option-group">
+      <label for="excludeDomains">Excluded Domains</label>
+      <textarea id="excludeDomains" 
+                placeholder="Enter one domain per line&#10;Example: example.com"></textarea>
+      <p class="help-text">Domains to exclude from search history tracking.</p>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
